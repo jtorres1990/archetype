@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  *
  * @since ${version}
  */
-@EnableFeignClients
+
 @SpringBootApplication
 public class ${ArtifactIdCamel}Application {
 

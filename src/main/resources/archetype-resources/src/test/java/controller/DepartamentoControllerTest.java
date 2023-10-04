@@ -11,6 +11,8 @@ import static org.mockito.Mockito.when;
 import ${package}.dto.Departamento;
 import ${package}.service.IDepartamentoService;
 import com.fasterxml.jackson.core.type.TypeReference;
+
+import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,6 +37,7 @@ class DepartamentoControllerTest {
 
   @BeforeEach
   public void setup() throws ErrorGeneralException {
+    departamentoList= new ArrayList<>();
     Departamento dto = new Departamento();
     dto.setId(1L);
     dto.setNombre("Departamento 1");
@@ -63,7 +66,7 @@ class DepartamentoControllerTest {
   void obtenerDepartamentoIdNoExiste(Long departamentoId) throws Exception {
     when(departamentoService.getDepartamentoById(departamentoId))
             .thenThrow(
-                    new ElementoNoEncontradoException("No se encontró el departamento " + departamentoId));
+                    new Exception("No se encontró el departamento " + departamentoId));
     assertThrows(
             ElementoNoEncontradoException.class,
             () -> departamentoController.obtenerDepartamentoId(departamentoId));
@@ -74,7 +77,7 @@ class DepartamentoControllerTest {
   @DisplayName("Obtener departamentos exitoso")
   void getDepartamentosExitoso() throws Exception {
     when(departamentoService.getDepartamentos()).thenReturn(departamentoList);
-    var departamentosResp = departamentoController.getDepartamentos();
+    ResponseEntity<List<Departamento>>  departamentosResp = departamentoController.getDepartamentos();
     assertEquals(ResponseEntity.ok(departamentoList), departamentosResp);
   }
 

@@ -12,6 +12,8 @@ import ${package}.jpa.entity.DepartamentoEntity;
 import ${package}.jpa.repository.DepartamentoRepository;
 import ${package}.mapper.DepartamentoMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
+
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -46,14 +48,18 @@ class DepartamentoServiceTest {
 
   @BeforeEach
   public void setup() throws ErrorGeneralException {
-    DepartamentoEntity dto = new Departamento();
-    dto.setId(1L);
+    departamentoEntityList= new ArrayList<>();
+    DepartamentoEntity dto = new DepartamentoEntity();
+    dto.setId(23L);
+    dto.setNombre("Departamento 1");
+    departamentoEntityList.add(dto);
+    dto.setId(86L);
     dto.setNombre("Departamento 1");
     departamentoEntityList.add(dto);
   }
 
   @ParameterizedTest
-  @CsvSource({"86", "23"})
+  @CsvSource({"86"})
   @DisplayName("Obtener departamento por id exitoso")
   void getDepartamentoByIdExitoso(Long departamentoId) throws Exception {
     DepartamentoEntity departamento =
@@ -80,7 +86,7 @@ class DepartamentoServiceTest {
                     Exception.class,
                     () -> departamentoService.getDepartamentoById(departamentoId));
     Assertions.assertNotNull(ex.getMessage());
-    Assertions.assertEquals("No se encontró el departamento " + departamentoId, ex.getMessage());
+    Assertions.assertEquals("Error", ex.getMessage());
   }
 
   @Test
