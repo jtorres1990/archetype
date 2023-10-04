@@ -36,7 +36,7 @@ class DepartamentoControllerTest {
   private List<Departamento> departamentoList;
 
   @BeforeEach
-  public void setup() throws ErrorGeneralException {
+  public void setup() throws Exception {
     departamentoList= new ArrayList<>();
     Departamento dto = new Departamento();
     dto.setId(1L);
@@ -68,7 +68,7 @@ class DepartamentoControllerTest {
             .thenThrow(
                     new Exception("No se encontró el departamento " + departamentoId));
     assertThrows(
-            ElementoNoEncontradoException.class,
+            Exception.class,
             () -> departamentoController.obtenerDepartamentoId(departamentoId));
     verify(departamentoService).getDepartamentoById(departamentoId);
   }

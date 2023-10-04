@@ -47,7 +47,7 @@ class DepartamentoServiceTest {
   private List<DepartamentoEntity> departamentoEntityList;
 
   @BeforeEach
-  public void setup() throws ErrorGeneralException {
+  public void setup() throws Exception {
     departamentoEntityList= new ArrayList<>();
     DepartamentoEntity dto = new DepartamentoEntity();
     dto.setId(23L);

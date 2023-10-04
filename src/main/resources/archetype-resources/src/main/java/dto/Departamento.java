@@ -18,4 +18,5 @@ import lombok.ToString;
 public class Departamento {
   private Long id;
   private String nombre;
+  private Long idPais;
 }

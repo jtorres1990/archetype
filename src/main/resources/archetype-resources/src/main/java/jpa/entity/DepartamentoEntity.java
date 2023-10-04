@@ -18,20 +18,21 @@ import javax.persistence.Table;
  * @since ${version}
  */
 @Entity
-@Table(name = "in_contrato", schema = "public")
+@Table(name = "pa_departamentos", schema = "public")
 @NoArgsConstructor
 @Getter
 @Setter
 public class DepartamentoEntity {
 
   @Id
-  @Column(name = "DEPARTAME_CODDPTO")
+  @Column(name = "id")
   private Long id;
 
-  @Column(name = "DEPARTAME_NOMBRE")
+  @Column(name = "nombre")
   private String nombre;
 
-  @Column(name = "DEPARTAME_PAIS_IDPAIS")
+  @Column(name = "idpais")
   private Long idPais;
 
 }
+
