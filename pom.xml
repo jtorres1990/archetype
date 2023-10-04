@@ -7,10 +7,6 @@
     <artifactId>PicapMicroserviceArchetype</artifactId>
     <version>1.0.0</version>
     <packaging>maven-archetype</packaging>
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
     <name>PicapMicroserviceArchetype</name>
 
     <build>
