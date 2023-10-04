@@ -12,7 +12,7 @@
     <version>${version}</version>
     <packaging>jar</packaging>
     <name>${artifactId}</name>
-    <description>Estructura base Picap 1.0.0 - ${ArtifactIdCamel}</description>
+    <description>Estructura base PICAP - ${ArtifactIdCamel}</description>
 
     <!-- PERFILES DE COMPILACION -->
     <profiles>
@@ -28,7 +28,10 @@
                 <activatedProperties>k8s</activatedProperties>
             </properties>
 
+
+
         </profile>
+
         <!-- PERFIL DEV -->
         <!-- COMANDO: mvn clean install -P dev -DskipTests -->
         <profile>
@@ -40,6 +43,7 @@
                 <activatedProperties>dev</activatedProperties>
             </properties>
         </profile>
+
     </profiles>
 
     <dependencies>
@@ -76,7 +80,21 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>${nimbus-jose-jwt.version}</version>
         </dependency>
 
         <!-- Pruebas Unitarias-->
@@ -92,7 +110,7 @@
         </dependency>
         <!-- Pruebas Unitarias-->
 
-        <!-- TRANSVERSALES RUNT LIBRARY -->
+
 
     </dependencies>
 
