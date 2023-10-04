@@ -34,7 +34,7 @@ public class DepartamentoController {
    * @return Departamento
    * @throws Exception Error cuando no se puede obtener el departamento
    */
-  @PrintLogs
+
   @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Departamento> obtenerDepartamentoId(@PathVariable Long id)
           throws Exception {
@@ -47,7 +47,7 @@ public class DepartamentoController {
    * @return Lista de departamentos
    * @throws Exception Error cuando no se pueden consultar los departamentos
    */
-  @PrintLogs(methodName = "Obtener Departamentos")
+
   @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<List<Departamento>> getDepartamentos()
           throws Exception {
