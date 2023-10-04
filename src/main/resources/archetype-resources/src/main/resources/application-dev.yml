@@ -1,0 +1,31 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+
+${symbol_pound}${symbol_pound} Configuración Server
+server:
+  port: 8080
+  servlet:
+    context-path: /${artifactId}
+
+${symbol_pound}${symbol_pound} Configuración Spring
+spring:
+  application:
+    name: ${artifactId}
+    description: Estructura base  proyecto PICAP ${ArtifactIdCamel}
+    version: ${version}
+  datasource:
+    password: 123456789Interventoria
+    url: jdbc:postgresql://db.aaushzsjiqmjoqaoxjmk.supabase.co:5432/Interventoria
+    username: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  jackson:
+    time-zone: America/Bogota

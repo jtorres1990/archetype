@@ -1,0 +1,7 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+${symbol_pound}Archivo propiedades de acuerdo al perfil maven seleccionado
+spring:
+  profiles:
+    active: '@activatedProperties@'
