@@ -32,9 +32,9 @@ public class DepartamentoController {
    *
    * @param id Identificador único del departamento a consultar
    * @return Departamento
-   * @throws ElementoNoEncontradoException Error cuando no se puede obtener el departamento
+   * @throws Exception Error cuando no se puede obtener el departamento
    */
-  @PrintLogs
+
   @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Departamento> obtenerDepartamentoId(@PathVariable Long id)
           throws Exception {
@@ -45,9 +45,9 @@ public class DepartamentoController {
    * Servicio para obtener todos los departamentos
    *
    * @return Lista de departamentos
-   * @throws ElementoNoEncontradoException Error cuando no se pueden consultar los departamentos
+   * @throws Exception Error cuando no se pueden consultar los departamentos
    */
-  @PrintLogs(methodName = "Obtener Departamentos")
+
   @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<List<Departamento>> getDepartamentos()
           throws Exception {

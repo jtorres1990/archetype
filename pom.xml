@@ -4,10 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>co.com.picap.archetype</groupId>
-    <artifactId>PicapMicroserviceArchetype</artifactId>
-    <version>1.0.0</version>
+    <artifactId>PICAPMicroserviceArchetype</artifactId>
+    <version>1.5.0</version>
     <packaging>maven-archetype</packaging>
-    <name>PicapMicroserviceArchetype</name>
+
+    <name>PICAPMicroserviceArchetype</name>
 
     <build>
         <extensions>
@@ -42,6 +43,15 @@
     </build>
 
     <description>Estructura base Arquitectura RUNT 2.0 Spring Boot</description>
+
+    <developers>
+        <developer>
+            <name>Pivotal</name>
+            <email>info@pivotal.io</email>
+            <organization>Pivotal Software, Inc.</organization>
+            <organizationUrl>https://www.spring.io</organizationUrl>
+        </developer>
+    </developers>
 
     <licenses>
         <license>

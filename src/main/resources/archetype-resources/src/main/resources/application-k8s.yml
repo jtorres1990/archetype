@@ -24,8 +24,23 @@ spring:
       ddl-auto: none
     properties:
       hibernate:
-        format_sql: ${formatSql:true}
+        format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
   jackson:
     time-zone: America/Bogota
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true

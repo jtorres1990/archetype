@@ -43,7 +43,7 @@ public class DepartamentoService implements IDepartamentoService {
     List<DepartamentoEntity> departamentoEntityList = departamentoRepository.findAll();
     if (Objects.isNull(departamentoEntityList) || departamentoEntityList.isEmpty()) {
       log.info("No se encontraron departamentos");
-      throw new throws Exception("No se encontraron departamentos");
+      throw new  Exception("No se encontraron departamentos");
     } else {
       return departamentoMapper.mapToDto(departamentoEntityList);
     }

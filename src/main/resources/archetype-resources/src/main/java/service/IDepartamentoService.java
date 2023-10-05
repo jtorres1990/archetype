@@ -18,7 +18,7 @@ public interface IDepartamentoService {
    *
    * @param id Identificador único del departamento
    * @return Información del departamento
-   * @throws ElementoNoEncontradoException Error cuando no se puede obtener el departamento
+   * @throws Exception Error cuando no se puede obtener el departamento
    * @since ${version}
    */
   public Departamento getDepartamentoById(Long id) throws Exception ;
@@ -27,7 +27,7 @@ public interface IDepartamentoService {
    * Método encargado de listar departamentos
    *
    * @return Lista de departamentos
-   * @throws ElementoNoEncontradoException Error cuando no se pueden consultar los departamentos
+   * @throws Exception Error cuando no se pueden consultar los departamentos
    * @since ${version}
    */
   public List<Departamento> getDepartamentos() throws Exception ;
