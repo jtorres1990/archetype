@@ -1,4 +1,4 @@
-# Runt2MicroserviceArchetype
+# PicapMicroserviceArchetype
 Pasos para crear unn proyecto a aprtir de este arquetipo
 1. Descargar el proyecto y ejecutar el comando mvn clean install
 2. Dentro de una carpeta vacia ejecutar el siguiente comando mvn archetype:generate -Dfilter="PICAPMicroserviceArchetype" -DarchetypeCatalog=local
